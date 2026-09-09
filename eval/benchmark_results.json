@@ -1,0 +1,73 @@
+{
+  "golden_set_size": 180,
+  "systems": {
+    "baseline_1_trivial": {
+      "macro_f1": 0.047619047619047616,
+      "deflection_rate": 0.0,
+      "fahr": 0.0,
+      "cer": 0.0,
+      "grounding": 2.94,
+      "tone": 3.89,
+      "actionability": 2.94,
+      "cohens_kappa": -0.0077
+    },
+    "baseline_2_vanilla_llm": {
+      "macro_f1": 0.8952751702969525,
+      "deflection_rate": 100.0,
+      "fahr": 33.33,
+      "cer": 100.0,
+      "grounding": 3.64,
+      "tone": 2.86,
+      "actionability": 3.53,
+      "cohens_kappa": 0.026
+    },
+    "proposed_pipeline": {
+      "macro_f1": 0.8952751702969525,
+      "deflection_rate": 62.22,
+      "fahr": 0.0,
+      "cer": 0.0,
+      "grounding": 4.44,
+      "tone": 4.21,
+      "actionability": 4.25,
+      "cohens_kappa": 0.9278,
+      "per_intent_metrics": {
+        "DEVICE_HARDWARE_ISSUE": {
+          "precision": 0.9375,
+          "recall": 1.0,
+          "f1_score": 0.967741935483871,
+          "support": 30
+        },
+        "SOFTWARE_OS_BUG": {
+          "precision": 0.7027027027027027,
+          "recall": 0.8666666666666667,
+          "f1_score": 0.7761194029850746,
+          "support": 30
+        },
+        "ACCOUNT_SECURITY_BILLING": {
+          "precision": 0.8620689655172413,
+          "recall": 0.8333333333333334,
+          "f1_score": 0.847457627118644,
+          "support": 30
+        },
+        "HOW_TO_CONFIGURATION": {
+          "precision": 1.0,
+          "recall": 0.9333333333333333,
+          "f1_score": 0.9655172413793104,
+          "support": 30
+        },
+        "ORDER_DELIVERY_STATUS": {
+          "precision": 0.9166666666666666,
+          "recall": 0.7333333333333333,
+          "f1_score": 0.8148148148148148,
+          "support": 30
+        },
+        "CHITCHAT_OUT_OF_SCOPE": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0,
+          "support": 30
+        }
+      }
+    }
+  }
+}

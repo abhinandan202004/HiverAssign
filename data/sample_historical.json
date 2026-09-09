@@ -1,0 +1,245 @@
+[
+  {
+    "tweet_id": "apple_hist_001",
+    "inbound_id": "cust_hist_001",
+    "author_id": "@AppleSupport",
+    "query_text": "@AppleSupport my iphone 13 screen cracked and touch is totally unresponsive on the right side. can i just replace the glass?",
+    "resolution_text": "We're sorry to hear about your iPhone display! For touch unresponsiveness, the entire display assembly typically requires service. You can check repair estimates and schedule an appointment with an Apple Authorized Service Provider at getsupport.apple.com. ^JM",
+    "intent": "DEVICE_HARDWARE_ISSUE",
+    "created_at": "2023-10-12T14:22:00Z"
+  },
+  {
+    "tweet_id": "apple_hist_002",
+    "inbound_id": "cust_hist_002",
+    "author_id": "@AppleSupport",
+    "query_text": "@AppleSupport battery health dropped to 74% and my phone dies at 30% battery. what can i do?",
+    "resolution_text": "A maximum capacity below 80% indicates the battery is degraded and may cause unexpected shutdowns. You can arrange a genuine battery replacement at an Apple Store or authorized provider via getsupport.apple.com. ^AB",
+    "intent": "DEVICE_HARDWARE_ISSUE",
+    "created_at": "2023-10-14T09:15:00Z"
+  },
+  {
+    "tweet_id": "apple_hist_003",
+    "inbound_id": "cust_hist_003",
+    "author_id": "@AppleSupport",
+    "query_text": "@AppleSupport my right airpod pro is crackling whenever i speak or move my head with anc turned on.",
+    "resolution_text": "We'd like to help get that AirPod sounding great again. Please clean the black mesh grille on both AirPods with a dry cotton swab, then reset them using the setup button on the case. If the issue persists, visit getsupport.apple.com for service options. ^VK",
+    "intent": "DEVICE_HARDWARE_ISSUE",
+    "created_at": "2023-10-15T11:40:00Z"
+  },
+  {
+    "tweet_id": "apple_hist_004",
+    "inbound_id": "cust_hist_004",
+    "author_id": "@AppleSupport",
+    "query_text": "@AppleSupport lightning port won't hold the cable, it keeps falling out and charging intermittently.",
+    "resolution_text": "Lint or debris inside the Lightning port can prevent the cable from seating properly. We suggest gently inspecting the port under a bright light and clearing any debris with a non-conductive wooden toothpick. ^TL",
+    "intent": "DEVICE_HARDWARE_ISSUE",
+    "created_at": "2023-10-16T16:05:00Z"
+  },
+  {
+    "tweet_id": "apple_hist_005",
+    "inbound_id": "cust_hist_005",
+    "author_id": "@AppleSupport",
+    "query_text": "@AppleSupport volume up button on my iphone 14 pro is completely stuck and doesn't click.",
+    "resolution_text": "Physical button jams can occur if residue accumulates around the switch. Try wiping around the button with a slightly damp microfiber cloth. If it remains seized, please schedule a hardware evaluation at getsupport.apple.com. ^DM",
+    "intent": "DEVICE_HARDWARE_ISSUE",
+    "created_at": "2023-10-18T18:22:00Z"
+  },
+  {
+    "tweet_id": "apple_hist_006",
+    "inbound_id": "cust_hist_006",
+    "author_id": "@AppleSupport",
+    "query_text": "@AppleSupport camera lens on my iphone 15 has condensation inside after being in light rain.",
+    "resolution_text": "Condensation behind camera optics indicates liquid ingress. Power off the device immediately, do not plug in a charger, and bring it to an Apple Authorized Service Provider for liquid damage assessment via getsupport.apple.com. ^JM",
+    "intent": "DEVICE_HARDWARE_ISSUE",
+    "created_at": "2023-10-20T08:50:00Z"
+  },
+  {
+    "tweet_id": "apple_hist_007",
+    "inbound_id": "cust_hist_007",
+    "author_id": "@AppleSupport",
+    "query_text": "@AppleSupport my macbook trackpad is clicking erratically and feels stiff in the middle.",
+    "resolution_text": "Trackpad stiffness can sometimes be associated with battery swelling beneath the trackpad. Please stop using the device on your lap, unplug it, and bring it to an Apple Store or Genius Bar for inspection at getsupport.apple.com. ^AB",
+    "intent": "DEVICE_HARDWARE_ISSUE",
+    "created_at": "2023-10-22T13:30:00Z"
+  },
+  {
+    "tweet_id": "apple_hist_008",
+    "inbound_id": "cust_hist_008",
+    "author_id": "@AppleSupport",
+    "query_text": "@AppleSupport updated to ios 17 and now my phone is stuck on the black apple logo loop for 2 hours.",
+    "resolution_text": "Let's help get your iPhone back up and running. Connect your device to a Mac or PC, quickly press Volume Up, then Volume Down, and hold the Side button until the recovery mode screen appears. Then choose Update via Finder/iTunes. ^VK",
+    "intent": "SOFTWARE_OS_BUG",
+    "created_at": "2023-10-13T10:02:00Z"
+  },
+  {
+    "tweet_id": "apple_hist_009",
+    "inbound_id": "cust_hist_009",
+    "author_id": "@AppleSupport",
+    "query_text": "@AppleSupport bluetooth keeps disconnecting every 30 seconds from my car audio after recent update.",
+    "resolution_text": "That must be frustrating during your drive. Go to Settings > Bluetooth, tap the (i) next to your car system, choose 'Forget This Device', and also forget your phone in the car's menu. Then re-pair them both to re-establish a fresh profile. ^DM",
+    "intent": "SOFTWARE_OS_BUG",
+    "created_at": "2023-10-15T15:18:00Z"
+  },
+  {
+    "tweet_id": "apple_hist_010",
+    "inbound_id": "cust_hist_010",
+    "author_id": "@AppleSupport",
+    "query_text": "@AppleSupport safari tabs keep crashing with 'a problem occurred with this webpage' repeatedly.",
+    "resolution_text": "Let's clear temporary web cache to resolve this. Head to Settings > Safari > Clear History and Website Data. Restart your iPhone afterward and check if pages load normally. ^TL",
+    "intent": "SOFTWARE_OS_BUG",
+    "created_at": "2023-10-17T12:45:00Z"
+  },
+  {
+    "tweet_id": "apple_hist_011",
+    "inbound_id": "cust_hist_011",
+    "author_id": "@AppleSupport",
+    "query_text": "@AppleSupport keyboard typing lag is unbearable on ios 17.0.3, letters appear 2 seconds after pressing.",
+    "resolution_text": "Keyboard latency can often be solved by resetting the dictionary cache. Try going to Settings > General > Transfer or Reset iPhone > Reset > Reset Keyboard Dictionary. Let us know if responsiveness improves! ^JM",
+    "intent": "SOFTWARE_OS_BUG",
+    "created_at": "2023-10-19T14:10:00Z"
+  },
+  {
+    "tweet_id": "apple_hist_012",
+    "inbound_id": "cust_hist_012",
+    "author_id": "@AppleSupport",
+    "query_text": "@AppleSupport photos app shows 'restoring from icloud' paused for 3 days even when on wifi and charging.",
+    "resolution_text": "Ensure Low Power Mode is switched off in Settings > Battery, as it pauses sync. Also verify that you have adequate local storage in Settings > General > iPhone Storage. ^AB",
+    "intent": "SOFTWARE_OS_BUG",
+    "created_at": "2023-10-21T17:55:00Z"
+  },
+  {
+    "tweet_id": "apple_hist_013",
+    "inbound_id": "cust_hist_013",
+    "author_id": "@AppleSupport",
+    "query_text": "@AppleSupport i was charged $99.99 for an app subscription i canceled 2 weeks ago. need a refund asap.",
+    "resolution_text": "We understand how unexpected charges feel. For your privacy and security, please sign in at reportaproblem.apple.com to inspect your purchase invoices and request a refund directly with our billing team. ^DM",
+    "intent": "ACCOUNT_SECURITY_BILLING",
+    "created_at": "2023-10-12T11:20:00Z"
+  },
+  {
+    "tweet_id": "apple_hist_014",
+    "inbound_id": "cust_hist_014",
+    "author_id": "@AppleSupport",
+    "query_text": "@AppleSupport my apple id is locked for security reasons and the trusted phone number is an old number i no longer have.",
+    "resolution_text": "Account security is our top priority. Since your trusted number has changed, you will need to start Account Recovery at iforgot.apple.com to regain access securely. Do not share credentials publicly. ^VK",
+    "intent": "ACCOUNT_SECURITY_BILLING",
+    "created_at": "2023-10-14T19:40:00Z"
+  },
+  {
+    "tweet_id": "apple_hist_015",
+    "inbound_id": "cust_hist_015",
+    "author_id": "@AppleSupport",
+    "query_text": "@AppleSupport got a suspicious sms saying my icloud is suspended and asking to click a link. is this real?",
+    "resolution_text": "Apple will never text you to ask for your password, two-factor code, or to click urgent account verification links. Please do not click any links and forward the message to reportphishing@apple.com. ^JM",
+    "intent": "ACCOUNT_SECURITY_BILLING",
+    "created_at": "2023-10-16T14:15:00Z"
+  },
+  {
+    "tweet_id": "apple_hist_016",
+    "inbound_id": "cust_hist_016",
+    "author_id": "@AppleSupport",
+    "query_text": "@AppleSupport someone in another country tried signing into my apple id, i changed my password but want to be sure.",
+    "resolution_text": "Great job changing your password immediately! Check Settings > [Your Name] to review trusted devices and remove any unfamiliar ones. Also ensure Two-Factor Authentication is active for maximum protection. ^AB",
+    "intent": "ACCOUNT_SECURITY_BILLING",
+    "created_at": "2023-10-18T20:10:00Z"
+  },
+  {
+    "tweet_id": "apple_hist_017",
+    "inbound_id": "cust_hist_017",
+    "author_id": "@AppleSupport",
+    "query_text": "@AppleSupport how do i set up airdrop so my friends can send me photos without being in my contacts?",
+    "resolution_text": "You can enable this easily! Swipe down from the top-right corner to open Control Center, press and hold the top-left connectivity card, tap AirDrop, and choose 'Everyone for 10 Minutes'. ^TL",
+    "intent": "HOW_TO_CONFIGURATION",
+    "created_at": "2023-10-11T13:00:00Z"
+  },
+  {
+    "tweet_id": "apple_hist_018",
+    "inbound_id": "cust_hist_018",
+    "author_id": "@AppleSupport",
+    "query_text": "@AppleSupport how do i transfer all my photos and apps from my old iphone to my new iphone 15?",
+    "resolution_text": "Transferring is seamless with Quick Start! Turn on both devices, place them next to each other with Wi-Fi and Bluetooth on, and follow the animated prompt that appears on your old phone's screen. ^JM",
+    "intent": "HOW_TO_CONFIGURATION",
+    "created_at": "2023-10-13T16:30:00Z"
+  },
+  {
+    "tweet_id": "apple_hist_019",
+    "inbound_id": "cust_hist_019",
+    "author_id": "@AppleSupport",
+    "query_text": "@AppleSupport how can i turn on automatic icloud backups so i don't lose my contacts?",
+    "resolution_text": "Go to Settings > [Your Name] > iCloud > iCloud Backup, and toggle 'Back Up This iPhone' to ON. Your phone will back up automatically when connected to power, Wi-Fi, and locked. ^AB",
+    "intent": "HOW_TO_CONFIGURATION",
+    "created_at": "2023-10-15T18:00:00Z"
+  },
+  {
+    "tweet_id": "apple_hist_020",
+    "inbound_id": "cust_hist_020",
+    "author_id": "@AppleSupport",
+    "query_text": "@AppleSupport how do i schedule dark mode to turn on automatically at sunset?",
+    "resolution_text": "Head to Settings > Display & Brightness, toggle 'Automatic' to ON, tap 'Options', and select 'Sunset to Sunrise'. ^VK",
+    "intent": "HOW_TO_CONFIGURATION",
+    "created_at": "2023-10-17T21:10:00Z"
+  },
+  {
+    "tweet_id": "apple_hist_021",
+    "inbound_id": "cust_hist_021",
+    "author_id": "@AppleSupport",
+    "query_text": "@AppleSupport ordered an iphone 15 pro last week, how do i find my tracking number to see where the delivery is?",
+    "resolution_text": "You can track your parcel in real-time by signing in at apple.com/orderstatus with your Apple ID or Web Order Number. Once dispatched, your courier tracking link will display directly there. ^DM",
+    "intent": "ORDER_DELIVERY_STATUS",
+    "created_at": "2023-10-12T15:45:00Z"
+  },
+  {
+    "tweet_id": "apple_hist_022",
+    "inbound_id": "cust_hist_022",
+    "author_id": "@AppleSupport",
+    "query_text": "@AppleSupport my apple store pickup window is today between 2-3pm but my flight is delayed. can someone else pick it up?",
+    "resolution_text": "Yes! You can designate an alternate pickup contact by going to apple.com/orderstatus, editing your order details, and adding their name and email. They must bring a valid government photo ID. ^JM",
+    "intent": "ORDER_DELIVERY_STATUS",
+    "created_at": "2023-10-14T12:00:00Z"
+  },
+  {
+    "tweet_id": "apple_hist_023",
+    "inbound_id": "cust_hist_023",
+    "author_id": "@AppleSupport",
+    "query_text": "@AppleSupport ups tracking says package was delivered to front porch but nothing is here.",
+    "resolution_text": "We want to make sure you get your order! Please double check around your property or with neighbors. If it still cannot be found, please contact our online store support team at apple.com/contact so we can open a courier investigation. ^AB",
+    "intent": "ORDER_DELIVERY_STATUS",
+    "created_at": "2023-10-16T17:35:00Z"
+  },
+  {
+    "tweet_id": "apple_hist_024",
+    "inbound_id": "cust_hist_024",
+    "author_id": "@AppleSupport",
+    "query_text": "@AppleSupport can i change my delivery address after my macbook order has already shipped?",
+    "resolution_text": "Once an item is in transit, the delivery address cannot be altered online for security reasons. However, you can manage delivery options or arrange a depot hold directly via UPS My Choice or FedEx Delivery Manager. ^TL",
+    "intent": "ORDER_DELIVERY_STATUS",
+    "created_at": "2023-10-18T10:15:00Z"
+  },
+  {
+    "tweet_id": "apple_hist_025",
+    "inbound_id": "cust_hist_025",
+    "author_id": "@AppleSupport",
+    "query_text": "@AppleSupport just wanted to say the camera on the 15 pro max is incredible! shot my entire vacation on it.",
+    "resolution_text": "That's wonderful to hear! We love knowing our camera helped capture your favorite vacation memories. What was your favorite spot you photographed? ^VK",
+    "intent": "CHITCHAT_OUT_OF_SCOPE",
+    "created_at": "2023-10-11T20:00:00Z"
+  },
+  {
+    "tweet_id": "apple_hist_026",
+    "inbound_id": "cust_hist_026",
+    "author_id": "@AppleSupport",
+    "query_text": "@AppleSupport hey siri tell tim cook i said what's up haha",
+    "resolution_text": "Haha, we'll pass along the warm regards! Hope you're having an awesome week. Let us know if you ever need a hand with any Apple gear! ^DM",
+    "intent": "CHITCHAT_OUT_OF_SCOPE",
+    "created_at": "2023-10-13T14:10:00Z"
+  },
+  {
+    "tweet_id": "apple_hist_027",
+    "inbound_id": "cust_hist_027",
+    "author_id": "@AppleSupport",
+    "query_text": "@AppleSupport why did the iphone go to school? because it lost all its contacts lol",
+    "resolution_text": "Classic! Glad iCloud Backup is always there to help it graduate with full honors. Thanks for the smile today! ^AB",
+    "intent": "CHITCHAT_OUT_OF_SCOPE",
+    "created_at": "2023-10-15T16:20:00Z"
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "failure_mode": "Intent Misclassification",
+    "total_occurrences": 19,
+    "representative_examples": [
+      {
+        "mode": "Intent Misclassification",
+        "tweet_text": "@AppleSupport wifi keeps dropping and asking for password every 15 minutes",
+        "gold_intent": "SOFTWARE_OS_BUG",
+        "predicted_intent": "ACCOUNT_SECURITY_BILLING",
+        "confidence": 0.95,
+        "details": "Classified as ACCOUNT_SECURITY_BILLING instead of SOFTWARE_OS_BUG"
+      },
+      {
+        "mode": "Intent Misclassification",
+        "tweet_text": "@AppleSupport widgets on home screen are all blank gray squares after restart",
+        "gold_intent": "SOFTWARE_OS_BUG",
+        "predicted_intent": "DEVICE_HARDWARE_ISSUE",
+        "confidence": 0.94,
+        "details": "Classified as DEVICE_HARDWARE_ISSUE instead of SOFTWARE_OS_BUG"
+      }
+    ],
+    "recommended_mitigation": "Fine-tune intent classification prompts on Twitter colloquialisms"
+  }
+]
