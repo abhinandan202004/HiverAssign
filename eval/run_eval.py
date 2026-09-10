@@ -352,7 +352,7 @@ Automated benchmark comparing **Baseline 1 (Trivial Heuristic)**, **Baseline 2 (
 > ### Critical Self-Auditing: Why Headline Numbers Require Nuance
 >
 > 1. **Stratification vs Real-World Distribution**:
->    The golden set is stratified evenly across the 6 intent classes (30 items each) to ensure rigorous statistical power across low-frequency edge cases. In actual Twitter production traffic for `@AppleSupport`, `ACCOUNT_SECURITY_BILLING` and `SOFTWARE_OS_BUG` constitute over $60\\%$ of traffic, while `CHITCHAT_OUT_OF_SCOPE` constitutes $< 5\\%$. Because `ACCOUNT_SECURITY_BILLING` is strictly escalated ($0\\%$ deflection), production deflection will be lower than the headline $48\\%$ deflection observed on an evenly stratified set.
+>    The golden set is stratified evenly across the 6 intent classes (30 items each) to ensure rigorous statistical power across low-frequency edge cases. In actual Twitter production traffic for `@AppleSupport`, `ACCOUNT_SECURITY_BILLING` and `SOFTWARE_OS_BUG` constitute over 60% of traffic, while `CHITCHAT_OUT_OF_SCOPE` constitutes < 5%. Because `ACCOUNT_SECURITY_BILLING` is strictly escalated (0% deflection), production deflection will be lower than the headline 48% deflection observed on an evenly stratified set.
 >
 > 2. **Static Few-Shot RAG Horizon**:
 >    The hybrid retriever operates on historical resolutions. In a production setting with a major iOS release (e.g. Day 1 of iOS 18), zero-day bugs will have zero historical resolutions in the corpus. Dense semantic search may retrieve superficially similar iOS 17 bugs whose workarounds might be obsolete or invalid, risking soft-filter degradation.
@@ -361,7 +361,7 @@ Automated benchmark comparing **Baseline 1 (Trivial Heuristic)**, **Baseline 2 (
 >    Headline numbers evaluate the **first turn** inbound triage. Customer hostility frequently escalates on turn 2 or turn 3 after a troubleshooting step fails. An auto-handled first turn that appears "safe" in isolation may degrade customer sentiment if the underlying issue was a hardware defect masquerading as a configuration glitch.
 >
 > 4. **Deflection vs Quality Trade-off (Pareto Frontier)**:
->    A $50\\%$ deflection rate with $0.0\\%$ CER represents an enterprise risk-averse operating point. Tuning the confidence threshold down from $0.85$ to $0.70$ would increase deflection to $\\approx 68\\%$, but would degrade FAHR to $4.2\\%$, violating enterprise safety SLAs.
+>    A 50% deflection rate with 0.0% CER represents an enterprise risk-averse operating point. Tuning the confidence threshold down from 0.85 to 0.70 would increase deflection to approx 68%, but would degrade FAHR to 4.2%, violating enterprise safety SLAs.
 """
 
     with open("eval/benchmark_summary.md", "w", encoding="utf-8") as f:
