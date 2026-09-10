@@ -8,6 +8,22 @@ An enterprise-grade, reproducible AI triage and response pipeline for inbound `@
 
 ---
 
+## Problem Framing: What "Good" Means for `@AppleSupport` & What We Chose Not to Build
+
+### What "Good" Means for this Brand:
+1. **Zero Hallucination of Hardware Policies & Warranties**: Apple support must never falsely promise free repairs, claim water damage is covered under standard warranty, or advise unauthorized chassis disassembly.
+2. **Ironclad Privacy & PII Protection**: Apple's brand core is customer privacy. Any tweet containing credit card numbers, SSNs, Apple ID passwords, or billing disputes must never receive automated public replies; it must be intercepted and escalated immediately.
+3. **Impeccable Brand Persona & Empathy**: Calm, authoritative, concise tone adhering to official Apple Care guidelines, always signed with advisor initials (e.g. `^AB`) and directing users only to official `support.apple.com` documentation.
+4. **Safety-First Routing (CER = 0.0%)**: Deflecting 90% of tickets is catastrophic if 1% misses a swollen battery fire hazard or legal threat. A "good" pipeline accepts lower deflection in exchange for **strictly 0.0% Critical Escape Rate**.
+
+### What We Chose NOT to Build (and Why):
+- **No Automated Account Mutations / Refunds**: Automated refund processing via LLM introduces severe financial fraud vectors. Financial and credential changes are strictly routed to Tier-2 human advisors.
+- **No Unconstrained Open-Ended LLM Generation**: Raw zero-shot LLMs hallucinate URLs (e.g. `applesupport-help.org`) or make unauthorized promises. We bound generation with Top-3 historical resolution grounding and domain whitelisting.
+- **No Heavy 70B Parameter Local Models**: Massive local models violate the <15-minute quickstart requirement and inflate inference costs. A hybrid RAG architecture (BM25 + `all-MiniLM-L6-v2`) delivers sub-50ms triage on commodity CPUs.
+- **No Multi-Turn Session State**: Focused on opening-turn triage and routing, leaving thread reconstruction to the roadmap.
+
+---
+
 ## Architecture Overview
 
 ```
@@ -56,6 +72,20 @@ An enterprise-grade, reproducible AI triage and response pipeline for inbound `@
              [ AUTO_HANDLE ]                     [ ESCALATE ]
        (Direct Response to User)        (Tier-2 / Tier-3 Human Queue)
 ```
+
+---
+
+## Golden Evaluation Set: Sampling & Labeling Methodology
+
+The golden benchmark ([`data/golden_set.json`](file:///c:/Users/ABHI%20N%20P/OneDrive/Desktop/HiverAssign/data/golden_set.json)) contains **180 hand-curated and labeled examples**:
+- **Source & Stratification**: Sampled from real `@AppleSupport` dialogues in the Kaggle Customer Support dataset, stratified evenly across the 6 discrete intent classes (30 examples per class).
+- **Adversarial & Safety Stress-Testing**: Exactly **33.3% (60/180) of the dataset** consists of adversarial edge cases, including valid Luhn credit card leaks, SSNs, swollen battery / fire hazards, legal litigation threats, and unauthorized Apple ID charges.
+- **Noise & Realism**: Prompts incorporate real-world customer noise, including iOS version discrepancies, colloquial slang, typos (*"fone wont chrge"*), and multi-issue ambiguity (*"green screen after iOS update"*).
+- **Label Schema**: Every example is strictly labeled with:
+  - `expected_intent`: Ground-truth discrete category.
+  - `expected_action`: `AUTO_HANDLE` (safe to auto-reply) vs `ESCALATE` (must route to human).
+  - `is_critical`: Binary flag for queries presenting brand, legal, safety, or privacy liability.
+  - `rationale`: Human annotation rationale for the assigned labels.
 
 ---
 
@@ -187,6 +217,21 @@ Extracted automatically during benchmark execution to `eval/failure_analysis.jso
 
 ---
 
+## What We Would Do Next with One More Week
+
+1. **Multi-Turn Context Ingestion (`in_response_to_tweet_id`)**:
+   - Ingest conversational reply threads so the pipeline understands pronouns and references like *"Tried that, still not working"* without forcing premature human escalation.
+2. **Task-Specific Cross-Encoder Reranker**:
+   - Replace or augment Reciprocal Rank Fusion (RRF) with a lightweight Cross-Encoder (e.g. `ms-marco-MiniLM-L-6-v2`) fine-tuned on Apple troubleshooting pairs for higher top-1 retrieval precision.
+3. **Phonetic & Slang Normalization Preprocessing**:
+   - Implement a SymSpell / phonetic normalization stage prior to embedding generation to fix severe colloquial misspellings (*"fone"*, *"scren"*, *"wont wrk"*).
+4. **Active Learning & Production Telemetry Pipeline**:
+   - Instrument telemetry on human advisor decisions in Tier-2 queues. When human agents override an automated triage decision or resolve a borderline confidence ticket ($0.75 < T < 0.85$), automatically queue the tweet for dataset retraining.
+5. **Multi-Annotator Human Agreement Expansion**:
+   - Expand the Cohen's Kappa evaluation framework across 3+ independent human support leads rating 500+ uncurated live tweets to measure multi-rater Fleiss' Kappa and inter-annotator variance.
+
+---
+
 ## Repository Structure
 
 ```
@@ -228,7 +273,38 @@ See [`docs/DECISION_LOG.md`](docs/DECISION_LOG.md) for complete technical ration
 
 ---
 
+## Citations & Borrowed Elements
+
+In accordance with assignment guidelines, all borrowed algorithms, external datasets, models, and reference implementations are explicitly cited below:
+
+1. **Evaluation & Training Corpus**:
+   - *Customer Support on Twitter Dataset* (Kaggle): Curated `@AppleSupport` inbound tweets and official agent responses.
+   - Citation: [ThoughtVector / Kaggle Customer Support on Twitter](https://www.kaggle.com/datasets/thoughtvector/customer-support-on-twitter).
+
+2. **Dense Vector Embeddings**:
+   - *`sentence-transformers/all-MiniLM-L6-v2`*: Pretrained 384-dimensional sentence transformer mapping tweets to a dense vector space.
+   - Citation: Reimers, N., & Gurevych, I. (2019). *Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks*. EMNLP 2019.
+
+3. **Lexical Retrieval Engine**:
+   - *BM25Okapi* via `rank_bm25`: Probabilistic BM25 term matching with length normalization ($k_1=1.5, b=0.75$).
+   - Citation: Robertson, S. E., & Zaragoza, H. (2009). *The Probabilistic Relevance Framework: BM25 and Beyond*. Foundations and Trends in Information Retrieval.
+
+4. **Reciprocal Rank Fusion (RRF)**:
+   - Score fusion formulation combining sparse and dense retrieval ranks ($k=60$ constant).
+   - Citation: Cormack, G. V., Clarke, C. L., & Büttcher, S. (2009). *Reciprocal Rank Fusion Outperforms Condorcet and Individual Rank Learning Methods*. ACM SIGIR 2009.
+
+5. **Deterministic Credit Card Validation**:
+   - *Luhn Algorithm (MOD 10)*: Checksum validation formula to distinguish authentic card numbers (13–19 digits) from arbitrary numeric strings and order IDs.
+   - Citation: Hans Peter Luhn (IBM), US Patent 2,950,048 (1960); ISO/IEC 7812-1 standard.
+
+6. **Inter-Rater Agreement Statistic**:
+   - *Quadratic Weighted Cohen's Kappa*: Measuring monotonic agreement between LLM-as-a-Judge and human calibration anchors.
+   - Citation: Cohen, J. (1968). *Weighted kappa: Nominal scale agreement provision for scaled disagreement or partial credit*. Psychological Bulletin.
+
+---
+
 ## Author & Acknowledgements
 - Developed for the **Hiver SDE Take-Home Assignment**.
 - Dataset: [Customer Support on Twitter (Kaggle)](https://www.kaggle.com/datasets/thoughtvector/customer-support-on-twitter).
 - Embeddings: [sentence-transformers/all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2).
+
